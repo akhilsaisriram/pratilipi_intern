@@ -93,7 +93,7 @@ Test all endpoints using http://localhost:8080/graphql.
 
 ## 🔄 Automated Processes
 
-![Cron Job Workflow](./asserts/cron%20job.png)
+<img src="./asserts/cron%20job.png" width="100%" height="300px" alt="Delete Order Flow" />
 
 
 The system implements two independent scheduled cron jobs that run every 12 hours (12AM/12PM) to enhance the notification experience:
