@@ -16,9 +16,10 @@ A simple microservices-based project for sending personalized notifications on a
 ## Architecture Diagram
 
 <p align="center">
-  <img src="./asserts/Main_arc.png" style="height: 300px; width: auto; max-width: 45%;" alt="Main Architecture" />
-  <img src="./asserts/communicaton.png" style="height: 300px; width: auto; max-width: 45%;" alt="Service Communication" />
+  <img src="./asserts/Main_arc.png" width="45%" height="300px" alt="Main Architecture" />
+  <img src="./asserts/communicaton.png" width="45%" height="300px" alt="Service Communication" />
 </p>
+
 
 
 ## Quick Start Guide
