@@ -88,7 +88,7 @@ const resolvers = {
   Query: {
     getProduct: async (_, { id }, context) => {
       const userId = context.userId;
-      console.log(context);
+      // console.log(context);
       const productService = new ProductService();
       return await productService.getProductById(id, userId);
     },
@@ -99,7 +99,7 @@ const resolvers = {
     },
     searchProducts: async (_, { input }, context) => {
       const userId = context.userId;
-      console.log(context);
+      // console.log(context);
 
       const productService = new ProductService();
       return await productService.searchProducts(input, userId);

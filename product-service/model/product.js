@@ -120,11 +120,21 @@ const recommendationSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-recommendationSchema.pre('save', function(next) {
+recommendationSchema.pre('save', function (next) {
+  console.log('====================================');
+  console.log("save");
+  console.log('====================================');
+  const uniqueMap = new Map();
+  this.recommendations.forEach(rec => {
+    uniqueMap.set(rec.productId.toString(), rec);
+  });
+  this.recommendations = Array.from(uniqueMap.values());
+
   if (this.recommendations.length > 7) {
     this.recommendations.sort((a, b) => a.addedAt - b.addedAt);
-    this.recommendations.shift();
+    this.recommendations = this.recommendations.slice(-7);
   }
+
   next();
 });
 

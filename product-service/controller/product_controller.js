@@ -502,45 +502,36 @@ exports.delproduct = async (req, res) => {
       .json({ message: "something went wrong", error: err.message });
   }
 };
-
 exports.getUserRecommendations = async (req, res) => {
   try {
-    const { userId } = req.body;
+    const { userId } = req.body
 
-    console.log("reco", userId);
-    const userRecommendation = await Recommendation.findOne({ userId:userId });
+    const userRecommendation = await Recommendation.findOne({ userId })
 
     if (!userRecommendation || !userRecommendation.recommendations.length) {
-      return res.status(200).json({
-        data: [],
-      });
+      return res.status(200).json({ data: [] })
     }
 
-    const productIds = userRecommendation.recommendations.map(
-      (rec) => rec.productId
-    );
+    const uniqueProductIds = [
+      ...new Set(userRecommendation.recommendations.map(rec => rec.productId.toString()))
+    ].slice(0, 5)
 
     const recommendedProducts = await Product.find({
-      _id: { $in: productIds },
-    });
+      _id: { $in: uniqueProductIds }
+    })
 
-    const sortedProducts = productIds
-      .map((id) =>
-        recommendedProducts.find(
-          (product) => product._id.toString() === id.toString()
-        )
-      )
-      .filter(Boolean);
+    const sortedProducts = uniqueProductIds
+      .map(id => recommendedProducts.find(product => product._id.toString() === id.toString()))
+      .filter(Boolean)
 
     return res.status(200).json({
-      data:sortedProducts,
-    });
+      data: sortedProducts
+    })
   } catch (error) {
-    console.error("Error fetching user recommendations:", error);
     return res.status(500).json({
       success: false,
-      message: "Failed to retrieve user recommendations",
-      error: error.message,
-    });
+      message: 'failed to retrieve user recommendations',
+      error: error.message
+    })
   }
-};
+}

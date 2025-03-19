@@ -64,7 +64,7 @@ class ProductService {
 
   async getRecommendations(userId) {
     const res=await this.sendRequest("post", `/product/recommandation`,{userId});
-    console.log(res)
+    // console.log(res)
     return res.data;
     
   }
