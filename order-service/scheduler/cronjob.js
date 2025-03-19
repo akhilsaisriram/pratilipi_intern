@@ -5,7 +5,9 @@ async function updateordersandnotify() {
     console.log("cron job");
     
     try {
-        const twelveHoursAgo = new Date(Date.now() - 12 * 60 * 60 * 1000);
+        // const twelveHoursAgo = new Date(Date.now() - 12 * 60 * 60 * 1000);
+        const twelveHoursAgo = new Date(Date.now() - 10 * 60 * 1000);
+
 
         const ordersToUpdate = await Order.find({
             orderStatus: "confirmed",
@@ -20,7 +22,8 @@ async function updateordersandnotify() {
 
         for (const order of ordersToUpdate) {
             order.orderStatus = "shipped";
-            await order.save();
+            // await order.save();
+            console.log(order);
             await notification(order);
         }
 
@@ -30,8 +33,12 @@ async function updateordersandnotify() {
     }
 }
 
-cron.schedule('0 */12 * * *', async () => {
-    console.log("running scheduled job to update orders");
-    await updateordersandnotify();
-});
+// cron.schedule('0 */12 * * *', async () => {
+//     console.log("running scheduled job to update orders");
+//     await updateordersandnotify();
+// });
 
+// cron.schedule('*/5 * * * * *', async () => {
+//   console.log("running scheduled job to find update orders");
+// //   await updateordersandnotify();
+// });

@@ -4,7 +4,6 @@ const Notification = require("../model/notification"); // Adjust path as needed
 const Queue = require("bull");
 const nodemailer = require("nodemailer");
 
-const emailQueue = new Queue("emailQueue");
 function generateNotification(order) {
   const productDetails = order.products
     .map((p) => `${p.name} (${p.quantity} x ₹${p.price})`)
@@ -150,7 +149,7 @@ async function processnotificationpromotion(notify) {
 
   const type = "promotion";
   for(const id of ids){
-    await Notification.create({ id, type, content });
+    await Notification.create({ userId:id, type, content });
 
   }
 

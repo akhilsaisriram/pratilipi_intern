@@ -6,10 +6,10 @@ const app = express();
 const product_route=require('./routes/products_route')
 const startInventoryConsumer = require('./consumer/rabbitmq_consumer'); 
 const RabbitMQService = require('./config/rabbitmq'); 
-
+require('./scheduler/cronjob')
 app.use(cors());
 app.use(express.json());
-app.use(morgan('dev')); // Logs requests to the console
+app.use(morgan('dev')); 
 connectdb();
 
 app.use('/product', product_route);

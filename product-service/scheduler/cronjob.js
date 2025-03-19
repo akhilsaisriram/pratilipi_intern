@@ -1,5 +1,5 @@
 const cron = require('node-cron');
-const Product = require("../model/product");
+const {Product} = require("../model/product");
 const RabbitMQService = require("../config/rabbitmq");
 
 const findtopproduct = async () => {
@@ -33,12 +33,12 @@ const findtopproduct = async () => {
 };
 
   
-// cron.schedule('0 */12 * * *', async () => {
-//     console.log("running scheduled job to update orders");
-//     await findtopproduct();
-// });
-
-cron.schedule('*/5 * * * * *', async () => {
-  console.log("running scheduled job to find top product");
-  // await findtopproduct();
+cron.schedule('0 */12 * * *', async () => {
+    console.log("running scheduled job to update orders");
+    await findtopproduct();
 });
+
+// cron.schedule('*/5 * * * * *', async () => {
+//   console.log("running scheduled job to find top product");
+//   // await findtopproduct();
+// });
