@@ -91,6 +91,24 @@ Test all endpoints using http://localhost:8080/graphql.
 2. Product adjusts stock and notifies Notification
 3. Notification emails cancellation info and stores it
 
+## 🔄 Automated Processes
+
+![Cron Job Workflow](./asserts/cron%20job.png)
+
+
+The system implements two independent scheduled cron jobs that run every 12 hours (12AM/12PM) to enhance the notification experience:
+
+### Promotional Notifications
+1. Product service selects top products for promotion
+2. Sends products to User service via RabbitMQ message queues
+3. User service filters users based on preferences
+4. Filtered users and products sent to Notification service via RabbitMQ message queues
+5. Notification service creates database records and sends promotional emails
+
+### Order Status Updates
+1. Cron job triggers status changes from "confirmed" to "shipped" every 12 hours
+2. Order service pushes updates to RabbitMQ message queues
+3. Notification service processes queue messages and notifies customers in email and in the db about order status updates
 
 
 
