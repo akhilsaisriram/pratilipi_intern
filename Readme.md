@@ -15,8 +15,10 @@ A simple microservices-based project for sending personalized notifications on a
 
 ## Architecture Diagram
 
-![Architecture Diagram](./asserts/Main_arc.png)
-![Architecture Diagram communication](./asserts/communicaton.png)
+<p align="center">
+  <img src="./asserts/Main_arc.png" style="height: 300px; width: auto; max-width: 45%;" alt="Main Architecture" />
+  <img src="./asserts/communicaton.png" style="height: 300px; width: auto; max-width: 45%;" alt="Service Communication" />
+</p>
 
 
 ## Quick Start Guide
@@ -59,7 +61,14 @@ Test all endpoints using http://localhost:8080/graphql.
 ### Services Communication Flow:
 
 #### User place an order 
-![Architecture Diagram order](./asserts/place%20order.png)
+<p align="center">
+  <img src="./asserts/place%20order.png" width="45%" height="300px" alt="Place Order Flow" />
+  <img src="./asserts/delorder.png" width="45%" height="300px" alt="Delete Order Flow" />
+</p>
+<p align="center">
+  <em>Left: Place Order Flow &nbsp;&nbsp;&nbsp;&nbsp; Right: Delete Order Flow</em>
+</p>
+
 
 
 ####  Flow: Order Processing & Notifications
