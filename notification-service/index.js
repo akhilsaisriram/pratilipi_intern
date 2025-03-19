@@ -19,21 +19,23 @@ app.get('/', (req, res) => {
 app.use('/notification', notificationRoutes);
 
 async function initializeApp() {
-  try {
-    await rabbitMQService.connect();
-    console.log('RabbitMQ service initialized successfully in notification');
-    await startConsumer(); 
-
-    process.on('SIGINT', async () => {
-      console.log('Shutting down...');
-      await rabbitMQService.closeConnection();
-      process.exit(0);
-    });
-    
-  } catch (error) {
-    console.error('Failed to initialize application:', error);
-    process.exit(1);
+  while (true) {
+    try {
+      await rabbitMQService.connect();
+      console.log('RabbitMQ service initialized successfully in notification');
+      await startConsumer();
+      break;
+    } catch (error) {
+      console.error('Failed to initialize RabbitMQ, retrying in 5s...', error.message);
+      await new Promise((res) => setTimeout(res, 5000));
+    }
   }
+
+  process.on('SIGINT', async () => {
+    console.log('Shutting down...');
+    await rabbitMQService.closeConnection();
+    process.exit(0);
+  });
 }
 
 initializeApp();

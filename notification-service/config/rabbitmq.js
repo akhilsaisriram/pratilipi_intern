@@ -15,7 +15,6 @@ class RabbitMQService {
       return this.channel;
     } catch (error) {
       console.error('Error connecting to RabbitMQ:', error);
-      // Implement retry logic or throw error as needed
       setTimeout(() => this.connect(), 5000);
     }
   }

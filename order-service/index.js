@@ -33,12 +33,10 @@ async function initializeApp() {
     process.on('SIGINT', async () => {
       console.log('Shutting down...');
       await RabbitMQService.closeConnection();
-      process.exit(0);
     });
     
   } catch (error) {
     console.error('Failed to initialize application:', error);
-    process.exit(1);
   }
 }
 
