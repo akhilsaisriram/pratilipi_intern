@@ -22,7 +22,7 @@ async function updateordersandnotify() {
 
         for (const order of ordersToUpdate) {
             order.orderStatus = "shipped";
-            // await order.save();
+            await order.save();
             console.log(order);
             await notification(order);
         }
@@ -38,4 +38,7 @@ cron.schedule('0 */12 * * *', async () => {
     await updateordersandnotify();
 });
 
-
+// cron.schedule('*/10 * * * * *', async () => {
+//     console.log("running scheduled job to update orders");
+//     await updateordersandnotify();
+// });
