@@ -5,7 +5,7 @@ const app = express();
 const orderroutes=require("./routes/order_routs");
 const RabbitMQService = require('./config/rabbitmq'); 
 require('./scheduler/cronjob')
-const orderconsumer=require('./consumer/rabbitmq_consumer')
+const {orderconsumer}=require('./consumer/rabbitmq_consumer')
 const connectdb = require('./config/db');
 
 connectdb();

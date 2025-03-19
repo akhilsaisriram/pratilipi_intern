@@ -282,7 +282,7 @@ async function startServer() {
       
         const query = req.body.query || "";
         const operationIsPublic = publicOperations.some((op) => query.includes(op));
-    
+        
         if (operationIsPublic) {
           return { userId: null };
         }

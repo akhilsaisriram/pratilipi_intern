@@ -10,7 +10,7 @@ async function notification(order) {
     }
     console.log("notification send from order");
     
-    // await RabbitMQService.sendtoqueue(queueName, data);
+    await RabbitMQService.sendtoqueue(queueName, data);
 
     
   } catch (error) {
@@ -73,4 +73,6 @@ async function orderconsumer() {
   }
 }
 
-module.exports = orderconsumer;
+module.exports = { orderconsumer, notification };
+
+

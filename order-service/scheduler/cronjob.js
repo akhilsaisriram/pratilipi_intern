@@ -1,6 +1,6 @@
 const cron = require('node-cron');
 const Order = require("../model/order");
-const notification=require('../consumer/rabbitmq_consumer')
+const {notification}=require('../consumer/rabbitmq_consumer')
 async function updateordersandnotify() {
     console.log("cron job");
     
@@ -33,12 +33,9 @@ async function updateordersandnotify() {
     }
 }
 
-// cron.schedule('0 */12 * * *', async () => {
-//     console.log("running scheduled job to update orders");
-//     await updateordersandnotify();
-// });
+cron.schedule('0 */12 * * *', async () => {
+    console.log("running scheduled job to update orders");
+    await updateordersandnotify();
+});
 
-// cron.schedule('*/5 * * * * *', async () => {
-//   console.log("running scheduled job to find update orders");
-// //   await updateordersandnotify();
-// });
+
