@@ -16,6 +16,8 @@ A simple microservices-based project for sending personalized notifications on a
 ## Architecture Diagram
 
 ![Architecture Diagram](./asserts/Main_arc.png)
+![Architecture Diagram communication](./asserts/communicaton.png)
+
 
 ## Quick Start Guide
 
@@ -53,6 +55,31 @@ Test all endpoints using http://localhost:8080/graphql.
 - Product Service: `http://<your-ip>:3003`
 - GraphQL Gateway: `http://<your-ip>:8080/graphql`
 - RabbitMQ Dashboard: `http://<your-ip>:15672` (guest / guest)
+
+### Services Communication Flow:
+
+#### User place an order 
+![Architecture Diagram order](./asserts/place%20order.png)
+
+
+####  Flow: Order Processing & Notifications
+
+#### User places an order through Order Service
+1. Order Service sends inventory check message to Product Service via RabbitMQ
+2. Product Service:
+   - Verifies inventory availability
+   - Updates product recommendations based on user preferences and sends them to the Notification Service if the user has enabled recommendations in the order
+   - Sends order response back through RabbitMQ
+3. If inventory is sufficient and user has notifications enabled:
+   - Order Service pushes order data to Notification Service 
+    
+4. Notification emails order confirmation and recommendations; stores notification as unread
+
+#### Delete Order Flow
+
+1. Order requests inventory update from Product
+2. Product adjusts stock and notifies Notification
+3. Notification emails cancellation info and stores it
 
 
 
