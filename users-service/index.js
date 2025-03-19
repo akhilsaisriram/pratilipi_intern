@@ -16,12 +16,12 @@ app.use('/users', user_route);
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'hello' });
 });
-
+startConsumer();
 async function initializeApp() {
   try {
     await RabbitMQService.connect();
     console.log('RabbitMQ service initialized successfully user');
-    await startConsumer();
+    // await startConsumer();
     process.on('SIGINT', async () => {
       console.log('Shutting down...');
       await RabbitMQService.closeConnection();

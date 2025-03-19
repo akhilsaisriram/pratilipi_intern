@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
 app.use('/order',orderroutes);
 
 
+orderconsumer();
 
 async function initializeApp() {
   try {
@@ -29,7 +30,7 @@ async function initializeApp() {
     await RabbitMQService.connect();
     console.log('RabbitMQ service initialized successfully');
 
-    await orderconsumer();
+    // await orderconsumer();
     process.on('SIGINT', async () => {
       console.log('Shutting down...');
       await RabbitMQService.closeConnection();

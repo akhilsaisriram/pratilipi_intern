@@ -17,13 +17,14 @@ app.use('/product', product_route);
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'hello products' });
 });
+startInventoryConsumer(); 
 async function initializeApp() {
   try {
     // Connect to RabbitMQ
     await RabbitMQService.connect();
     console.log('RabbitMQ service initialized successfully product');
 
-     await startInventoryConsumer(); 
+    //  await startInventoryConsumer(); 
 
 
     process.on('SIGINT', async () => {

@@ -17,13 +17,13 @@ app.get('/', (req, res) => {
 });
 
 app.use('/notification', notificationRoutes);
-
+startConsumer();
 async function initializeApp() {
   while (true) {
     try {
       await rabbitMQService.connect();
       console.log('RabbitMQ service initialized successfully in notification');
-      await startConsumer();
+      // await startConsumer();
       break;
     } catch (error) {
       console.error('Failed to initialize RabbitMQ, retrying in 5s...', error.message);
