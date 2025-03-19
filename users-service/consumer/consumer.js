@@ -48,7 +48,10 @@ async function startConsumer() {
         },
         { noAck: false }
       );
+
     }
+    console.log(`Listening for messages on: ${queues.join(", ")}...`);
+
   } catch (error) {
     console.error("Error starting consumer:", error);
   }
