@@ -13,19 +13,19 @@ A simple microservices-based project for sending personalized notifications on a
 - **GraphQL API Gateway** — unified client interface, JWT-based authentication
 - **RabbitMQ** — messaging system for async communication
 
-## 📸 Architecture Diagram
+## Architecture Diagram
 
-> *(Attach a simple hand-drawn or whiteboard-style system design image in the repository folder)*
+![Architecture Diagram](./asserts/Main_arc.png)
 
-##  Quick Start Guide (Code)
+## Quick Start Guide
 
-**1. Clone the repository:**
+### 1️⃣ Clone the repository:
 ```bash
 git clone https://github.com/akhilsaisriram/pratilipi_intern.git
 cd pratilipi_intern
 ```
 
-**2. Add a `.env` file in the root directory:**
+### 2️⃣ Add a `.env` file in the root directory:
 ```env
 MONGO_USERNAME=your_mongo_username
 MONGO_PASSWORD=your_mongo_password
@@ -34,13 +34,19 @@ JWT_SECRET=your_secret_key
 BASE_URL=http://<your-ip>
 ```
 
-**3. Build and run all services:**
+### 3️⃣ Build and run all services:
 ```bash
 docker-compose build
 docker-compose up
 ```
 
-**4. Access URLs:**
+## 🧪 Testing
+
+Import the provided Postman collection from the repository root.
+
+Test all endpoints using http://localhost:8080/graphql.
+
+### Services:
 - User Service: `http://<your-ip>:3000`
 - Notification Service: `http://<your-ip>:3001`
 - Order Service: `http://<your-ip>:3002`
@@ -48,13 +54,7 @@ docker-compose up
 - GraphQL Gateway: `http://<your-ip>:8080/graphql`
 - RabbitMQ Dashboard: `http://<your-ip>:15672` (guest / guest)
 
-## 🤖How It Works
 
-- Services communicate asynchronously using RabbitMQ.
-- The GraphQL Gateway fetches and aggregates data from services.
 
-##  Testing
-
-- Test using GraphQL Playground at `http://localhost:8080/graphql` or use the provided Postman collection.
 
 

@@ -1,0 +1,3704 @@
+{
+	"info": {
+		"_postman_id": "60f0b229-d940-4527-ae15-896fc23125b0",
+		"name": "intern",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38793952"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation Register {\r\n    register(\r\n        input: {\r\n            name: \"akhil\"\r\n            email: \"saisriram9848@gmail.com\"\r\n            password: \"123456789\"\r\n            preferences: {\r\n                promotions: true\r\n                order_updates: true\r\n                recommendations: true\r\n            }\r\n        }\r\n    ) {\r\n        _id\r\n        name\r\n        email\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "useradded",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation Register {\r\n    register(\r\n        input: {\r\n            name: \"akhil\"\r\n            email: \"saisriram9848@gmail.com\"\r\n            password: \"123456789\"\r\n            preferences: {\r\n                promotions: true\r\n                order_updates: true\r\n                recommendations: true\r\n            }\r\n        }\r\n    ) {\r\n        _id\r\n        name\r\n        email\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "162"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a2-mqybahmPiklJsy6VjaU2vfhISW0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:20:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"register\": {\n            \"_id\": \"67daa89a530770be4e94526e\",\n            \"name\": \"akhil\",\n            \"email\": \"saisriram9848@gmail.com\",\n            \"createdAt\": \"2025-03-19T11:20:58.683Z\",\n            \"updatedAt\": null\n        }\n    }\n}"
+						},
+						{
+							"name": "dupicateuser_error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation Register {\r\n    register(\r\n        input: {\r\n            name: \"akhil\"\r\n            email: \"saisriram9848@gmail.com\"\r\n            password: \"123456789\"\r\n            preferences: {\r\n                promotions: true\r\n                order_updates: true\r\n                recommendations: true\r\n            }\r\n        }\r\n    ) {\r\n        _id\r\n        name\r\n        email\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "549"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"225-Xjtob51pDz+T8RqFxmOeTLuNry8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:21:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"message\": \"User with this email already exist\",\n            \"locations\": [\n                {\n                    \"line\": 2,\n                    \"column\": 5\n                }\n            ],\n            \"path\": [\n                \"register\"\n            ],\n            \"extensions\": {\n                \"code\": \"INTERNAL_SERVER_ERROR\",\n                \"stacktrace\": [\n                    \"Error: User with this email already exist\",\n                    \"    at userservice.handleError (/usr/src/app/services/user_service.js:78:13)\",\n                    \"    at userservice.register (/usr/src/app/services/user_service.js:20:12)\",\n                    \"    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\",\n                    \"    at async Object.register (/usr/src/app/schema/schema_user.js:81:24)\"\n                ]\n            }\n        }\n    ],\n    \"data\": null\n}"
+						},
+						{
+							"name": "2nd user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation Register {\r\n    register(\r\n        input: {\r\n            name: \"akhil\"\r\n            email: \"akhilsaisriram.r21@iiits.in\"\r\n            password: \"123456789\"\r\n            preferences: {\r\n                promotions: true\r\n                order_updates: true\r\n                recommendations: true\r\n            }\r\n        }\r\n    ) {\r\n        _id\r\n        name\r\n        email\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a6-9vxyvsC9kQVTv5960P8V89nXsZA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:28:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"register\": {\n            \"_id\": \"67daaa4c530770be4e945278\",\n            \"name\": \"akhil\",\n            \"email\": \"akhilsaisriram.r21@iiits.in\",\n            \"createdAt\": \"2025-03-19T11:28:12.314Z\",\n            \"updatedAt\": null\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseData = pm.response.json();\r",
+									"const token = responseData.data.login.token;\r",
+									"\r",
+									"if (token) {\r",
+									"    pm.collectionVariables.set(\"token\", token);\r",
+									"    console.log(\"Token set in collection variable:\", token);\r",
+									"} else {\r",
+									"    console.log(\"Token not found in response.\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation Register {\r\n    login(input: { email: \"saisriram9848@gmail.com\", password: \"123456789\" }) {\r\n        token\r\n        user {\r\n            name\r\n            email\r\n            createdAt\r\n            updatedAt\r\n            _id\r\n        }\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation Register {\r\n    login(input: { email: \"saisriram9848@gmail.com\", password: \"123456789\" }) {\r\n        token\r\n        user {\r\n            name\r\n            email\r\n            createdAt\r\n            updatedAt\r\n            _id\r\n        }\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "395"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18b-r39Nu8frp/QlXMrRuEb9xZKxDqA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:23:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"login\": {\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFhODlhNTMwNzcwYmU0ZTk0NTI2ZSIsImVtYWlsIjoic2Fpc3JpcmFtOTg0OEBnbWFpbC5jb20iLCJpYXQiOjE3NDIzODMzOTksImV4cCI6MTc0MjQ2OTc5OX0.crpA_8Dw50URaTEaIrvY5H8kf-BjZOirFgDKxQP48zA\",\n            \"user\": {\n                \"name\": \"akhil\",\n                \"email\": \"saisriram9848@gmail.com\",\n                \"createdAt\": \"2025-03-19T11:20:58.683Z\",\n                \"updatedAt\": null,\n                \"_id\": \"67daa89a530770be4e94526e\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getuser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetUser {\r\n    getUser {\r\n        name\r\n        createdAt\r\n        updatedAt\r\n        _id\r\n        email\r\n        preferences {\r\n            promotions\r\n            order_updates\r\n            recommendations\r\n        }\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getuser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query GetUser {\r\n    getUser {\r\n        name\r\n        createdAt\r\n        updatedAt\r\n        _id\r\n        email\r\n        preferences {\r\n            promotions\r\n            order_updates\r\n            recommendations\r\n        }\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "239"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ef-n/vnKqx31HEB+F4ndLA7F0rUHhw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:26:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getUser\": {\n            \"name\": \"akhil\",\n            \"createdAt\": \"2025-03-19T11:20:58.683Z\",\n            \"updatedAt\": null,\n            \"_id\": \"67daa89a530770be4e94526e\",\n            \"email\": \"saisriram9848@gmail.com\",\n            \"preferences\": {\n                \"promotions\": true,\n                \"order_updates\": true,\n                \"recommendations\": true\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "edituser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation UpdateUser {\r\n    updateUser(\r\n        input: { name: \"akhil sai sriram\", preferences: { promotions: true } }\r\n    ) {\r\n        _id\r\n        name\r\n        email\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation UpdateUser {\r\n    updateUser(\r\n        input: { name: \"akhil sai sriram\", preferences: { promotions: true } }\r\n    ) {\r\n        _id\r\n        name\r\n        email\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "175"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"af-EI+ml60aaxtb2mKQ2gkcXIBJqVc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:30:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"updateUser\": {\n            \"_id\": \"67daa89a530770be4e94526e\",\n            \"name\": \"akhil sai sriram\",\n            \"email\": \"saisriram9848@gmail.com\",\n            \"createdAt\": \"2025-03-19T11:20:58.683Z\",\n            \"updatedAt\": null\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "editpassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation ChangePassword {\r\n    changePassword(\r\n        input: { currentPassword: \"123456789\", newPassword: \"987654321\" }\r\n    ) {\r\n        message\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation ChangePassword {\r\n    changePassword(\r\n        input: { currentPassword: \"123456789\", newPassword: \"987654321\" }\r\n    ) {\r\n        message\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-5woWL7G5mjTaNNc2mWgabBoYj/Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:31:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"changePassword\": {\n            \"message\": \"Password changed successfully\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseData = pm.response.json();\r",
+									"const token = responseData.data.login.token;\r",
+									"\r",
+									"if (token) {\r",
+									"    pm.collectionVariables.set(\"token\", token);\r",
+									"    console.log(\"Token set in collection variable:\", token);\r",
+									"} else {\r",
+									"    console.log(\"Token not found in response.\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation Register {\r\n    login(input: { email: \"akhilsaisriram.r21@iiits.in\", password: \"123456789\" }) {\r\n        token\r\n        user {\r\n            name\r\n            email\r\n            createdAt\r\n            updatedAt\r\n            _id\r\n        }\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "see updated change",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation Register {\r\n    login(input: { email: \"saisriram9848@gmail.com\", password: \"987654321\" }) {\r\n        token\r\n        user {\r\n            name\r\n            email\r\n            createdAt\r\n            updatedAt\r\n            _id\r\n        }\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "406"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"196-fAvEJxGhfFSKt3P+QELYXYi+Ncc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:34:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"login\": {\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFhODlhNTMwNzcwYmU0ZTk0NTI2ZSIsImVtYWlsIjoic2Fpc3JpcmFtOTg0OEBnbWFpbC5jb20iLCJpYXQiOjE3NDIzODQwNTQsImV4cCI6MTc0MjQ3MDQ1NH0.7u1WBfQrc3OMpEe7MtuUT1xGX4Y0FEt3VLNLNg5bCEo\",\n            \"user\": {\n                \"name\": \"akhil sai sriram\",\n                \"email\": \"saisriram9848@gmail.com\",\n                \"createdAt\": \"2025-03-19T11:20:58.683Z\",\n                \"updatedAt\": null,\n                \"_id\": \"67daa89a530770be4e94526e\"\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "login\\ as 2nd user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation Register {\r\n    login(input: { email: \"akhilsaisriram.r21@iiits.in\", password: \"123456789\" }) {\r\n        token\r\n        user {\r\n            name\r\n            email\r\n            createdAt\r\n            updatedAt\r\n            _id\r\n        }\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "404"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"194-8jCLwnyGxcUIY4uFecUgeRc1beU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:38:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"login\": {\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFhYTRjNTMwNzcwYmU0ZTk0NTI3OCIsImVtYWlsIjoiYWtoaWxzYWlzcmlyYW0ucjIxQGlpaXRzLmluIiwiaWF0IjoxNzQyMzg0Mjg0LCJleHAiOjE3NDI0NzA2ODR9.ifqJ5y3b-cmQR4-bAH8AZf8gaUQ2cbwof10BBLJrCzo\",\n            \"user\": {\n                \"name\": \"akhil\",\n                \"email\": \"akhilsaisriram.r21@iiits.in\",\n                \"createdAt\": \"2025-03-19T11:28:12.314Z\",\n                \"updatedAt\": null,\n                \"_id\": \"67daaa4c530770be4e945278\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete 2nd user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation DeleteUser {\r\n    deleteUser {\r\n        message\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation DeleteUser {\r\n    deleteUser {\r\n        message\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-HhwUXAfNBjTB7xLtQCzS6VppxY0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:40:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"deleteUser\": {\n            \"message\": \"User deleted successfully\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "getallproduts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetProduct {\r\n    getAllProducts {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query GetProduct {\r\n    getAllProducts {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-DHEUeovLUTBv4s5WfPYI6n+iyzQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:42:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getAllProducts\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "addproduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation AddProduct {\r\n  addProduct(\r\n    input: {\r\n      productname: \"HP Omen 16\"\r\n      description: \"High-performance gaming laptop with RTX 4070\"\r\n      price: 135000\r\n      unitsavailable: 18\r\n      category: \"electronics\"\r\n      subcategory: \"laptop\"\r\n      company: \"HP\"\r\n    }\r\n  ) {\r\n    _id\r\n    productname\r\n    description\r\n    price\r\n    unitsavailable\r\n    category\r\n    subcategory\r\n    company\r\n    images\r\n    likes\r\n    dislikes\r\n    createdAt\r\n    updatedAt\r\n  }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation AddProduct {\r\n    addProduct(\r\n        input: {\r\n            productname: \"iphone 14 pro\"\r\n            description: \"the fastest iphone ever\"\r\n            price: 15000\r\n            unitsavailable: 50\r\n            category: \"electronics\"\r\n            subcategory: \"mobile\"\r\n            company: \"apple\"\r\n        }\r\n    ) {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "344"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"158-fsKKh8NzHMJ+b+Fiz7yLtt1VelQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:57:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addProduct\": {\n            \"_id\": \"67dab1294bfc2b258d3e7a05\",\n            \"productname\": \"iphone 14 pro\",\n            \"description\": \"the fastest iphone ever\",\n            \"price\": 15000,\n            \"unitsavailable\": 50,\n            \"category\": \"electronics\",\n            \"subcategory\": \"mobile\",\n            \"company\": \"apple\",\n            \"images\": [],\n            \"likes\": [],\n            \"dislikes\": [],\n            \"createdAt\": \"2025-03-19T11:57:29.960Z\",\n            \"updatedAt\": \"2025-03-19T11:57:29.960Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation AddProduct {\r\n  addProduct(\r\n    input: {\r\n      productname: \"Samsung Galaxy S24\"\r\n      description: \"The next-gen Android flagship\"\r\n      price: 12000\r\n      unitsavailable: 80\r\n      category: \"electronics\"\r\n      subcategory: \"mobile\"\r\n      company: \"Samsung\"\r\n    }\r\n  ) {\r\n    _id\r\n    productname\r\n    description\r\n    price\r\n    unitsavailable\r\n    category\r\n    subcategory\r\n    company\r\n    images\r\n    likes\r\n    dislikes\r\n    createdAt\r\n    updatedAt\r\n  }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "357"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"165-xuL0IH32qajZJFAO07RVrFb3t9w\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:58:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addProduct\": {\n            \"_id\": \"67dab1504bfc2b258d3e7a08\",\n            \"productname\": \"Samsung Galaxy S24\",\n            \"description\": \"The next-gen Android flagship\",\n            \"price\": 12000,\n            \"unitsavailable\": 80,\n            \"category\": \"electronics\",\n            \"subcategory\": \"mobile\",\n            \"company\": \"Samsung\",\n            \"images\": [],\n            \"likes\": [],\n            \"dislikes\": [],\n            \"createdAt\": \"2025-03-19T11:58:08.782Z\",\n            \"updatedAt\": \"2025-03-19T11:58:08.782Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation AddProduct {\r\n  addProduct(\r\n    input: {\r\n      productname: \"Sony WH-1000XM5\"\r\n      description: \"Industry-leading noise-canceling wireless headphones\"\r\n      price: 29000\r\n      unitsavailable: 50\r\n      category: \"electronics\"\r\n      subcategory: \"headphones\"\r\n      company: \"Sony\"\r\n    }\r\n  ) {\r\n    _id\r\n    productname\r\n    description\r\n    price\r\n    unitsavailable\r\n    category\r\n    subcategory\r\n    company\r\n    images\r\n    likes\r\n    dislikes\r\n    createdAt\r\n    updatedAt\r\n  }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "378"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17a-B7XUBejFAMOsDlDFPA8ogi1Mpq0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:58:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addProduct\": {\n            \"_id\": \"67dab1834bfc2b258d3e7a0b\",\n            \"productname\": \"Sony WH-1000XM5\",\n            \"description\": \"Industry-leading noise-canceling wireless headphones\",\n            \"price\": 29000,\n            \"unitsavailable\": 50,\n            \"category\": \"electronics\",\n            \"subcategory\": \"headphones\",\n            \"company\": \"Sony\",\n            \"images\": [],\n            \"likes\": [],\n            \"dislikes\": [],\n            \"createdAt\": \"2025-03-19T11:58:59.141Z\",\n            \"updatedAt\": \"2025-03-19T11:58:59.141Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation AddProduct {\r\n  addProduct(\r\n    input: {\r\n      productname: \"Asus ROG Strix RTX 4080\"\r\n      description: \"High-end gaming graphics card with advanced cooling\"\r\n      price: 125000\r\n      unitsavailable: 15\r\n      category: \"electronics\"\r\n      subcategory: \"graphic card\"\r\n      company: \"Asus\"\r\n    }\r\n  ) {\r\n    _id\r\n    productname\r\n    description\r\n    price\r\n    unitsavailable\r\n    category\r\n    subcategory\r\n    company\r\n    images\r\n    likes\r\n    dislikes\r\n    createdAt\r\n    updatedAt\r\n  }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "388"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"184-NFsQmYiZDguKvmPpVfRUUzAxFXI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:59:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addProduct\": {\n            \"_id\": \"67dab1924bfc2b258d3e7a0e\",\n            \"productname\": \"Asus ROG Strix RTX 4080\",\n            \"description\": \"High-end gaming graphics card with advanced cooling\",\n            \"price\": 125000,\n            \"unitsavailable\": 15,\n            \"category\": \"electronics\",\n            \"subcategory\": \"graphic card\",\n            \"company\": \"Asus\",\n            \"images\": [],\n            \"likes\": [],\n            \"dislikes\": [],\n            \"createdAt\": \"2025-03-19T11:59:14.131Z\",\n            \"updatedAt\": \"2025-03-19T11:59:14.131Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation AddProduct {\r\n  addProduct(\r\n    input: {\r\n      productname: \"LG 55-inch 4K OLED TV\"\r\n      description: \"Ultra HD smart TV with Dolby Vision and Atmos\"\r\n      price: 95000\r\n      unitsavailable: 30\r\n      category: \"electronics\"\r\n      subcategory: \"television\"\r\n      company: \"LG\"\r\n    }\r\n  ) {\r\n    _id\r\n    productname\r\n    description\r\n    price\r\n    unitsavailable\r\n    category\r\n    subcategory\r\n    company\r\n    images\r\n    likes\r\n    dislikes\r\n    createdAt\r\n    updatedAt\r\n  }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "375"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"177-AVwxpVX4Q2Qor4vNs5e03YGA/Ko\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:59:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addProduct\": {\n            \"_id\": \"67dab1a04bfc2b258d3e7a11\",\n            \"productname\": \"LG 55-inch 4K OLED TV\",\n            \"description\": \"Ultra HD smart TV with Dolby Vision and Atmos\",\n            \"price\": 95000,\n            \"unitsavailable\": 30,\n            \"category\": \"electronics\",\n            \"subcategory\": \"television\",\n            \"company\": \"LG\",\n            \"images\": [],\n            \"likes\": [],\n            \"dislikes\": [],\n            \"createdAt\": \"2025-03-19T11:59:28.887Z\",\n            \"updatedAt\": \"2025-03-19T11:59:28.887Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation AddProduct {\r\n  addProduct(\r\n    input: {\r\n      productname: \"Nike Air Max 270\"\r\n      description: \"Stylish and comfortable running shoes\"\r\n      price: 12500\r\n      unitsavailable: 100\r\n      category: \"fashion\"\r\n      subcategory: \"footwear\"\r\n      company: \"Nike\"\r\n    }\r\n  ) {\r\n    _id\r\n    productname\r\n    description\r\n    price\r\n    unitsavailable\r\n    category\r\n    subcategory\r\n    company\r\n    images\r\n    likes\r\n    dislikes\r\n    createdAt\r\n    updatedAt\r\n  }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "359"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"167-+cBrZ6GYhzxu7dGaPVShUcjeFsc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:59:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addProduct\": {\n            \"_id\": \"67dab1af4bfc2b258d3e7a14\",\n            \"productname\": \"Nike Air Max 270\",\n            \"description\": \"Stylish and comfortable running shoes\",\n            \"price\": 12500,\n            \"unitsavailable\": 100,\n            \"category\": \"fashion\",\n            \"subcategory\": \"footwear\",\n            \"company\": \"Nike\",\n            \"images\": [],\n            \"likes\": [],\n            \"dislikes\": [],\n            \"createdAt\": \"2025-03-19T11:59:43.877Z\",\n            \"updatedAt\": \"2025-03-19T11:59:43.877Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation AddProduct {\r\n  addProduct(\r\n    input: {\r\n      productname: \"Rolex Submariner\"\r\n      description: \"Luxury diving watch with automatic movement\"\r\n      price: 750000\r\n      unitsavailable: 5\r\n      category: \"fashion\"\r\n      subcategory: \"watches\"\r\n      company: \"Rolex\"\r\n    }\r\n  ) {\r\n    _id\r\n    productname\r\n    description\r\n    price\r\n    unitsavailable\r\n    category\r\n    subcategory\r\n    company\r\n    images\r\n    likes\r\n    dislikes\r\n    createdAt\r\n    updatedAt\r\n  }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "364"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16c-eskcPVueS4oxR11A7ys0ThbUoIs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 11:59:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addProduct\": {\n            \"_id\": \"67dab1be4bfc2b258d3e7a17\",\n            \"productname\": \"Rolex Submariner\",\n            \"description\": \"Luxury diving watch with automatic movement\",\n            \"price\": 750000,\n            \"unitsavailable\": 5,\n            \"category\": \"fashion\",\n            \"subcategory\": \"watches\",\n            \"company\": \"Rolex\",\n            \"images\": [],\n            \"likes\": [],\n            \"dislikes\": [],\n            \"createdAt\": \"2025-03-19T11:59:58.560Z\",\n            \"updatedAt\": \"2025-03-19T11:59:58.560Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation AddProduct {\r\n  addProduct(\r\n    input: {\r\n      productname: \"Canon EOS R7\"\r\n      description: \"Mirrorless camera with 32.5MP APS-C sensor\"\r\n      price: 140000\r\n      unitsavailable: 20\r\n      category: \"electronics\"\r\n      subcategory: \"camera\"\r\n      company: \"Canon\"\r\n    }\r\n  ) {\r\n    _id\r\n    productname\r\n    description\r\n    price\r\n    unitsavailable\r\n    category\r\n    subcategory\r\n    company\r\n    images\r\n    likes\r\n    dislikes\r\n    createdAt\r\n    updatedAt\r\n  }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "363"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16b-ExJuDxgGbVrwSB357oNBD+GnXyQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:00:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addProduct\": {\n            \"_id\": \"67dab1ce4bfc2b258d3e7a1a\",\n            \"productname\": \"Canon EOS R7\",\n            \"description\": \"Mirrorless camera with 32.5MP APS-C sensor\",\n            \"price\": 140000,\n            \"unitsavailable\": 20,\n            \"category\": \"electronics\",\n            \"subcategory\": \"camera\",\n            \"company\": \"Canon\",\n            \"images\": [],\n            \"likes\": [],\n            \"dislikes\": [],\n            \"createdAt\": \"2025-03-19T12:00:14.816Z\",\n            \"updatedAt\": \"2025-03-19T12:00:14.816Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation AddProduct {\r\n  addProduct(\r\n    input: {\r\n      productname: \"Dell XPS 13 Plus\"\r\n      description: \"Premium ultrabook with OLED display and sleek design\"\r\n      price: 165000\r\n      unitsavailable: 40\r\n      category: \"electronics\"\r\n      subcategory: \"laptop\"\r\n      company: \"Dell\"\r\n    }\r\n  ) {\r\n    _id\r\n    productname\r\n    description\r\n    price\r\n    unitsavailable\r\n    category\r\n    subcategory\r\n    company\r\n    images\r\n    likes\r\n    dislikes\r\n    createdAt\r\n    updatedAt\r\n  }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "376"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"178-LrYplnyIwr/bOvZPOCD09iYXBCc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:00:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addProduct\": {\n            \"_id\": \"67dab1dd4bfc2b258d3e7a1d\",\n            \"productname\": \"Dell XPS 13 Plus\",\n            \"description\": \"Premium ultrabook with OLED display and sleek design\",\n            \"price\": 165000,\n            \"unitsavailable\": 40,\n            \"category\": \"electronics\",\n            \"subcategory\": \"laptop\",\n            \"company\": \"Dell\",\n            \"images\": [],\n            \"likes\": [],\n            \"dislikes\": [],\n            \"createdAt\": \"2025-03-19T12:00:29.597Z\",\n            \"updatedAt\": \"2025-03-19T12:00:29.597Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getallproduts Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetProduct {\r\n    getAllProducts(page:1,limit:7) {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getallproduts Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query GetProduct {\r\n    getAllProducts(page:1,limit:3) {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1057"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"421-UWBEeHNPD3k0jClPhYiE+eZCD/0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:02:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getAllProducts\": [\n            {\n                \"_id\": \"67dab2004bfc2b258d3e7a20\",\n                \"productname\": \"HP Omen 16\",\n                \"description\": \"High-performance gaming laptop with RTX 4070\",\n                \"price\": 135000,\n                \"unitsavailable\": 18,\n                \"category\": \"electronics\",\n                \"subcategory\": \"laptop\",\n                \"company\": \"HP\",\n                \"images\": [],\n                \"likes\": [],\n                \"dislikes\": [],\n                \"createdAt\": \"2025-03-19T12:01:04.015Z\",\n                \"updatedAt\": \"2025-03-19T12:01:04.015Z\"\n            },\n            {\n                \"_id\": \"67dab1dd4bfc2b258d3e7a1d\",\n                \"productname\": \"Dell XPS 13 Plus\",\n                \"description\": \"Premium ultrabook with OLED display and sleek design\",\n                \"price\": 165000,\n                \"unitsavailable\": 40,\n                \"category\": \"electronics\",\n                \"subcategory\": \"laptop\",\n                \"company\": \"Dell\",\n                \"images\": [],\n                \"likes\": [],\n                \"dislikes\": [],\n                \"createdAt\": \"2025-03-19T12:00:29.597Z\",\n                \"updatedAt\": \"2025-03-19T12:00:29.597Z\"\n            },\n            {\n                \"_id\": \"67dab1ce4bfc2b258d3e7a1a\",\n                \"productname\": \"Canon EOS R7\",\n                \"description\": \"Mirrorless camera with 32.5MP APS-C sensor\",\n                \"price\": 140000,\n                \"unitsavailable\": 20,\n                \"category\": \"electronics\",\n                \"subcategory\": \"camera\",\n                \"company\": \"Canon\",\n                \"images\": [],\n                \"likes\": [],\n                \"dislikes\": [],\n                \"createdAt\": \"2025-03-19T12:00:14.816Z\",\n                \"updatedAt\": \"2025-03-19T12:00:14.816Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get product by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "\r\nquery GetProduct {\r\n    getProduct(id: \"67dab1be4bfc2b258d3e7a17\") {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "\r\nquery GetProduct {\r\n    getProduct(id: \"67dab2004bfc2b258d3e7a20\") {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "360"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"168-7+8Ot86/KoGnbWDB8B1AJaNmJpU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:05:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getProduct\": {\n            \"_id\": \"67dab2004bfc2b258d3e7a20\",\n            \"productname\": \"HP Omen 16\",\n            \"description\": \"High-performance gaming laptop with RTX 4070\",\n            \"price\": 135000,\n            \"unitsavailable\": 18,\n            \"category\": \"electronics\",\n            \"subcategory\": \"laptop\",\n            \"company\": \"HP\",\n            \"images\": [],\n            \"likes\": [],\n            \"dislikes\": [],\n            \"createdAt\": \"2025-03-19T12:01:04.015Z\",\n            \"updatedAt\": \"2025-03-19T12:01:04.015Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "after Delete",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "\r\nquery GetProduct {\r\n    getProduct(id: \"67dab1be4bfc2b258d3e7a17\") {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "646"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"286-VSTQNQ3xRMvP4qwHD1jt/ZW0EJY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:34:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"message\": \"Product not found\",\n            \"locations\": [\n                {\n                    \"line\": 3,\n                    \"column\": 5\n                }\n            ],\n            \"path\": [\n                \"getProduct\"\n            ],\n            \"extensions\": {\n                \"code\": \"INTERNAL_SERVER_ERROR\",\n                \"stacktrace\": [\n                    \"Error: Product not found\",\n                    \"    at ProductService.handleError (/usr/src/app/services/product_service.js:96:13)\",\n                    \"    at ProductService.sendRequest (/usr/src/app/services/product_service.js:89:12)\",\n                    \"    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\",\n                    \"    at async ProductService.getProductById (/usr/src/app/services/product_service.js:41:15)\",\n                    \"    at async Object.getProduct (/usr/src/app/schema/product_schema.js:93:14)\"\n                ]\n            }\n        }\n    ],\n    \"data\": {\n        \"getProduct\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "search product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query SearchProducts {\r\n    searchProducts(input: { query: \"Sams\" }) {\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query SearchProducts {\r\n    searchProducts(input: { query: \"hp\" }) {\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "203"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cb-CqXcU/A2jlMlM6XuaYF4HAmZCoI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:12:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"searchProducts\": [\n            {\n                \"productname\": \"HP Omen 16\",\n                \"description\": \"High-performance gaming laptop with RTX 4070\",\n                \"price\": 135000,\n                \"unitsavailable\": 18,\n                \"category\": \"electronics\",\n                \"subcategory\": \"laptop\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query SearchProducts {\r\n    searchProducts(input: { query: \"Sams\" }) {\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "195"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c3-PcgSqDYEquHworJDXdh5zWOQIrw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:14:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"searchProducts\": [\n            {\n                \"productname\": \"Samsung Galaxy S24\",\n                \"description\": \"The next-gen Android flagship\",\n                \"price\": 12000,\n                \"unitsavailable\": 80,\n                \"category\": \"electronics\",\n                \"subcategory\": \"mobile\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query SearchProducts {\r\n    searchProducts(input: { query: \"Asu\" }) {\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "229"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e5-VdDs3QrzA99R7IG3Gl6ARx5MiTo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:14:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"searchProducts\": [\n            {\n                \"productname\": \"Asus ROG Strix RTX 4080\",\n                \"description\": \"High-end gaming graphics card with advanced cooling\",\n                \"price\": 125000,\n                \"unitsavailable\": 15,\n                \"category\": \"electronics\",\n                \"subcategory\": \"graphic card\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getrecommendation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetUserRecommendations {\r\n    getUserRecommendations {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query GetUserRecommendations {\r\n    getUserRecommendations {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1396"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"574-UnterzCGiT3bDiaeCNMa69cJP8A\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:18:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getUserRecommendations\": [\n            {\n                \"_id\": \"67dab1504bfc2b258d3e7a08\",\n                \"productname\": \"Samsung Galaxy S24\",\n                \"description\": \"The next-gen Android flagship\",\n                \"price\": 12000,\n                \"unitsavailable\": 80,\n                \"category\": \"electronics\",\n                \"subcategory\": \"mobile\",\n                \"company\": \"Samsung\",\n                \"images\": [],\n                \"likes\": [],\n                \"dislikes\": [],\n                \"createdAt\": \"2025-03-19T11:58:08.782Z\",\n                \"updatedAt\": \"2025-03-19T11:58:08.782Z\"\n            },\n            {\n                \"_id\": \"67dab1294bfc2b258d3e7a05\",\n                \"productname\": \"iphone 14 pro\",\n                \"description\": \"the fastest iphone ever\",\n                \"price\": 15000,\n                \"unitsavailable\": 50,\n                \"category\": \"electronics\",\n                \"subcategory\": \"mobile\",\n                \"company\": \"apple\",\n                \"images\": [],\n                \"likes\": [],\n                \"dislikes\": [],\n                \"createdAt\": \"2025-03-19T11:57:29.960Z\",\n                \"updatedAt\": \"2025-03-19T11:57:29.960Z\"\n            },\n            {\n                \"_id\": \"67dab1834bfc2b258d3e7a0b\",\n                \"productname\": \"Sony WH-1000XM5\",\n                \"description\": \"Industry-leading noise-canceling wireless headphones\",\n                \"price\": 29000,\n                \"unitsavailable\": 50,\n                \"category\": \"electronics\",\n                \"subcategory\": \"headphones\",\n                \"company\": \"Sony\",\n                \"images\": [],\n                \"likes\": [],\n                \"dislikes\": [],\n                \"createdAt\": \"2025-03-19T11:58:59.141Z\",\n                \"updatedAt\": \"2025-03-19T11:58:59.141Z\"\n            },\n            {\n                \"_id\": \"67dab1a04bfc2b258d3e7a11\",\n                \"productname\": \"LG 55-inch 4K OLED TV\",\n                \"description\": \"Ultra HD smart TV with Dolby Vision and Atmos\",\n                \"price\": 95000,\n                \"unitsavailable\": 30,\n                \"category\": \"electronics\",\n                \"subcategory\": \"television\",\n                \"company\": \"LG\",\n                \"images\": [],\n                \"likes\": [],\n                \"dislikes\": [],\n                \"createdAt\": \"2025-03-19T11:59:28.887Z\",\n                \"updatedAt\": \"2025-03-19T11:59:28.887Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "editproduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation UpdateProduct {\r\n    updateProduct(\r\n        id: \"67dab1dd4bfc2b258d3e7a1d\"\r\n        input: {\r\n            productname: \"Dell XPS 13 Plus silver\"\r\n            price: 155000\r\n        }\r\n    ) {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "editproduct",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation UpdateProduct {\r\n    updateProduct(\r\n        id: \"67dab1dd4bfc2b258d3e7a1d\"\r\n        input: {\r\n            productname: \"Dell XPS 13 Plus silver\"\r\n            price: 155000\r\n        }\r\n    ) {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "386"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"182-7oAZ01j1qT1KsPw7Wf60DiuFqrY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:22:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"updateProduct\": {\n            \"_id\": \"67dab1dd4bfc2b258d3e7a1d\",\n            \"productname\": \"Dell XPS 13 Plus silver\",\n            \"description\": \"Premium ultrabook with OLED display and sleek design\",\n            \"price\": 155000,\n            \"unitsavailable\": 40,\n            \"category\": \"electronics\",\n            \"subcategory\": \"laptop\",\n            \"company\": \"Dell\",\n            \"images\": [],\n            \"likes\": [],\n            \"dislikes\": [],\n            \"createdAt\": \"2025-03-19T12:00:29.597Z\",\n            \"updatedAt\": \"2025-03-19T12:22:00.243Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "addrating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation UpdateRating {\r\n    updateRating(productId: \"67dab2004bfc2b258d3e7a20\", rating: like) {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation UpdateRating {\r\n    updateRating(productId: \"67dab2004bfc2b258d3e7a20\", rating: like) {\r\n        _id\r\n        productname\r\n        description\r\n        price\r\n        unitsavailable\r\n        category\r\n        subcategory\r\n        company\r\n        images\r\n        likes\r\n        dislikes\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "388"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"184-Vs46oO+zC68/ua9STVUJfbU/E7U\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:24:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"updateRating\": {\n            \"_id\": \"67dab2004bfc2b258d3e7a20\",\n            \"productname\": \"HP Omen 16\",\n            \"description\": \"High-performance gaming laptop with RTX 4070\",\n            \"price\": 135000,\n            \"unitsavailable\": 18,\n            \"category\": \"electronics\",\n            \"subcategory\": \"laptop\",\n            \"company\": \"HP\",\n            \"images\": [],\n            \"likes\": [\n                \"67daaeb3530770be4e94528c\"\n            ],\n            \"dislikes\": [],\n            \"createdAt\": \"2025-03-19T12:01:04.015Z\",\n            \"updatedAt\": \"2025-03-19T12:24:36.327Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "addreview",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation AddReview {\r\n    addReview(productId: \"67dab1dd4bfc2b258d3e7a1d\", input: { username: \"akhil\", message: \"cool\" })\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation AddReview {\r\n    addReview(productId: \"67dab1dd4bfc2b258d3e7a1d\", input: { username: \"akhil\", message: \"cool\" })\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-2PNe0oaK67z3LT/7MfylWbCVstI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:27:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addReview\": \"Review added successfully.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation DeleteProduct {\r\n    deleteProduct(id: \"67dab1be4bfc2b258d3e7a17\")\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation DeleteProduct {\r\n    deleteProduct(id: \"67dab1be4bfc2b258d3e7a17\")\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-pN+q6OPiwMBFYMfAoIpLgC5kfWk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:34:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"deleteProduct\": \"product deleted successfully\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "getorder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetOrdersByUser {\r\n    getOrdersByUser(nondelivered: false) {\r\n        _id\r\n        userId\r\n        totalPrice\r\n        address\r\n        contactNumber\r\n        orderDate\r\n        estimatedDelivery\r\n        isDelivered\r\n        deliveryDate\r\n        paymentMethod\r\n        isPaid\r\n        transactionId\r\n        orderStatus\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query GetOrdersByUser {\r\n    getOrdersByUser(nondelivered: false) {\r\n        _id\r\n        userId\r\n        totalPrice\r\n        address\r\n        contactNumber\r\n        orderDate\r\n        estimatedDelivery\r\n        isDelivered\r\n        deliveryDate\r\n        paymentMethod\r\n        isPaid\r\n        transactionId\r\n        orderStatus\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-IsHNbGK8tbL5eq09mxgHoF2j/ys\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 12:38:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getOrdersByUser\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "AddOrders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation CreateOrder {\r\n    createOrder(\r\n        input: {\r\n            name: \"akhil\"\r\n            email: \"saisriram9848@gmail.com\"\r\n            products: {\r\n                productId: \"67dab2004bfc2b258d3e7a20\"\r\n                name: \"HP Omen 16\"\r\n                company: \"HP\"\r\n                quantity: 1\r\n                price: 135000\r\n                category: \"electronics\"\r\n                subcategory: \"laptop\"\r\n            }\r\n            address: \"sricity\"\r\n            contactNumber: \"1234567896\"\r\n            orderDate: \"2025-03-19T10:01:00Z\"\r\n            paymentMethod: \"cod\"\r\n            isPaid: false\r\n            sendnotification: true\r\n            sendrecommendation: true\r\n            orderStatus: \"pending\"\r\n        }\r\n    ) {\r\n        message\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "AddOrders",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation createOrder {\r\n    createOrder(\r\n        input: {\r\n            name: \"akhil\"\r\n            email: \"saisriram9848@gmail.com\"\r\n            products: {\r\n                productId: \"67dab2004bfc2b258d3e7a20\"\r\n                name: \"HP Omen 16\"\r\n                company: \"HP\"\r\n                quantity: 1\r\n                price: 135000\r\n                category: \"electronics\"\r\n                subcategory: \"laptop\"\r\n            }\r\n            address: \"sricity\"\r\n            contactNumber: \"1234567896\"\r\n            orderDate: \"2025-03-19T10:01:00Z\"\r\n            paymentMethod: \"cod\"\r\n            isPaid: false\r\n            sendnotification: true\r\n            sendrecommendation: true\r\n            orderStatus: \"pending\"\r\n        }\r\n    ) {\r\n        message\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "102"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"66-sMRPXVoursqN2bfwNv6RKueadGE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 13:02:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"createOrder\": {\n            \"message\": \"Order received. We will notify you about the status via email.\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get notifications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetUnreadNotifications {\r\n    getUnreadNotifications(read: false) {\r\n        _id\r\n        userId\r\n        type\r\n        content\r\n        sentAt\r\n        read\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query GetUnreadNotifications {\r\n    getUnreadNotifications(read: false) {\r\n        _id\r\n        userId\r\n        type\r\n        content\r\n        sentAt\r\n        read\r\n    }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1978"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7ba-klU2XIlu4FQCUvDlfAeOFJM2GO0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 13:05:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getUnreadNotifications\": [\n            {\n                \"_id\": \"67dac0a00599bc6a6f8d3f45\",\n                \"userId\": \"67daaeb3530770be4e94528c\",\n                \"type\": \"recommendation\",\n                \"content\": \"Looking for something great? Check out Sony WH-1000XM5 from Sony! \\n  This electronics product, under the headphones category, is available for just $29000. \\n  With 0 people liking it  it's a trending choice! \\n  Hurry, only 50 units left in stock. Order now!\",\n                \"sentAt\": \"2025-03-19T13:03:28.763Z\",\n                \"read\": false\n            },\n            {\n                \"_id\": \"67dac0a00599bc6a6f8d3f44\",\n                \"userId\": \"67daaeb3530770be4e94528c\",\n                \"type\": \"recommendation\",\n                \"content\": \"Looking for something great? Check out iphone 14 pro from apple! \\n  This electronics product, under the mobile category, is available for just $15000. \\n  With 0 people liking it  it's a trending choice! \\n  Hurry, only 50 units left in stock. Order now!\",\n                \"sentAt\": \"2025-03-19T13:03:28.762Z\",\n                \"read\": false\n            },\n            {\n                \"_id\": \"67dac0a00599bc6a6f8d3f43\",\n                \"userId\": \"67daaeb3530770be4e94528c\",\n                \"type\": \"recommendation\",\n                \"content\": \"Looking for something great? Check out Samsung Galaxy S24 from Samsung! \\n  This electronics product, under the mobile category, is available for just $12000. \\n  With 0 people liking it  it's a trending choice! \\n  Hurry, only 80 units left in stock. Order now!\",\n                \"sentAt\": \"2025-03-19T13:03:28.760Z\",\n                \"read\": false\n            },\n            {\n                \"_id\": \"67dac0a00599bc6a6f8d3f42\",\n                \"userId\": \"67daaeb3530770be4e94528c\",\n                \"type\": \"recommendation\",\n                \"content\": \"Looking for something great? Check out HP Omen 16 from HP! \\n  This electronics product, under the laptop category, is available for just $135000. \\n  With 1 people liking it  it's a trending choice! \\n  Hurry, only 17 units left in stock. Order now!\",\n                \"sentAt\": \"2025-03-19T13:03:28.758Z\",\n                \"read\": false\n            },\n            {\n                \"_id\": \"67dac0a00599bc6a6f8d3f40\",\n                \"userId\": \"67daaeb3530770be4e94528c\",\n                \"type\": \"order_update\",\n                \"content\": \"Your order #bd9d00 has been confirmed! Items: HP Omen 16 (1 x ₹135000). Expected delivery by 3/22/2025. Payment status: Pending.\",\n                \"sentAt\": \"2025-03-19T13:03:28.729Z\",\n                \"read\": false\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query GetUnreadNotifications {\r\n    getUnreadNotifications(read: false) {\r\n        _id\r\n        userId\r\n        type\r\n        content\r\n        sentAt\r\n        read\r\n    }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-IacuH0+OvA3loNGyyZ4+nQ1/4OU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 13:05:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getUnreadNotifications\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getorder Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetOrdersByUser {\r\n    getOrdersByUser(nondelivered: true) {\r\n        _id\r\n        userId\r\n        totalPrice\r\n        address\r\n        contactNumber\r\n        orderDate\r\n        estimatedDelivery\r\n        isDelivered\r\n        deliveryDate\r\n        paymentMethod\r\n        isPaid\r\n        transactionId\r\n        orderStatus\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getorder Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query GetOrdersByUser {\r\n    getOrdersByUser(nondelivered: true) {\r\n        _id\r\n        userId\r\n        totalPrice\r\n        address\r\n        contactNumber\r\n        orderDate\r\n        estimatedDelivery\r\n        isDelivered\r\n        deliveryDate\r\n        paymentMethod\r\n        isPaid\r\n        transactionId\r\n        orderStatus\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "379"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17b-iXO3loBn9qeOmdqjPSeUyRwEx2k\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 13:06:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getOrdersByUser\": [\n            {\n                \"_id\": \"67dac0760ef6e4c04cbd9d00\",\n                \"userId\": \"67daaeb3530770be4e94528c\",\n                \"totalPrice\": 135000,\n                \"address\": \"sricity\",\n                \"contactNumber\": \"1234567896\",\n                \"orderDate\": \"2025-03-19T10:01:00.000Z\",\n                \"estimatedDelivery\": \"2025-03-22T13:02:46.555Z\",\n                \"isDelivered\": false,\n                \"deliveryDate\": null,\n                \"paymentMethod\": \"cod\",\n                \"isPaid\": false,\n                \"transactionId\": \"\",\n                \"orderStatus\": \"confirmed\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get order by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetOrderById {\r\n    getOrderById(orderId: \"67dac0760ef6e4c04cbd9d00\") {\r\n        \r\n        totalPrice\r\n        address\r\n        contactNumber\r\n        orderDate\r\n        estimatedDelivery\r\n        isDelivered\r\n        deliveryDate\r\n        paymentMethod\r\n        isPaid\r\n        transactionId\r\n        orderStatus\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query GetOrderById {\r\n    getOrderById(orderId: \"67dac0760ef6e4c04cbd9d00\") {\r\n        \r\n        totalPrice\r\n        address\r\n        contactNumber\r\n        orderDate\r\n        estimatedDelivery\r\n        isDelivered\r\n        deliveryDate\r\n        paymentMethod\r\n        isPaid\r\n        transactionId\r\n        orderStatus\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "305"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"131-WhW8Ch8wsn3V9Dl1J4HDPjOytNw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 13:10:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getOrderById\": {\n            \"totalPrice\": 135000,\n            \"address\": \"sricity\",\n            \"contactNumber\": \"1234567896\",\n            \"orderDate\": \"2025-03-19T10:01:00.000Z\",\n            \"estimatedDelivery\": \"2025-03-22T13:02:46.555Z\",\n            \"isDelivered\": false,\n            \"deliveryDate\": null,\n            \"paymentMethod\": \"cod\",\n            \"isPaid\": false,\n            \"transactionId\": \"\",\n            \"orderStatus\": \"confirmed\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Del order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation DeleteOrder {\r\n    deleteOrder(orderId: \"67dac0760ef6e4c04cbd9d00\") {\r\n        message\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation DeleteOrder {\r\n    deleteOrder(orderId: \"67dac0760ef6e4c04cbd9d00\") {\r\n        message\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-g61zETcH9JCiEwLOdUg/GjqYB/k\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 13:12:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"deleteOrder\": {\n            \"message\": \"Order deleted successfully\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get order by id Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetOrderById {\r\n    getOrderById(orderId: \"67dac0760ef6e4c04cbd9d00\") {\r\n        \r\n        totalPrice\r\n        address\r\n        contactNumber\r\n        orderDate\r\n        estimatedDelivery\r\n        isDelivered\r\n        deliveryDate\r\n        paymentMethod\r\n        isPaid\r\n        transactionId\r\n        orderStatus\r\n    }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query GetOrderById {\r\n    getOrderById(orderId: \"67dac0760ef6e4c04cbd9d00\") {\r\n        \r\n        totalPrice\r\n        address\r\n        contactNumber\r\n        orderDate\r\n        estimatedDelivery\r\n        isDelivered\r\n        deliveryDate\r\n        paymentMethod\r\n        isPaid\r\n        transactionId\r\n        orderStatus\r\n    }\r\n}\r\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "305"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"131-WhW8Ch8wsn3V9Dl1J4HDPjOytNw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 13:10:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getOrderById\": {\n            \"totalPrice\": 135000,\n            \"address\": \"sricity\",\n            \"contactNumber\": \"1234567896\",\n            \"orderDate\": \"2025-03-19T10:01:00.000Z\",\n            \"estimatedDelivery\": \"2025-03-22T13:02:46.555Z\",\n            \"isDelivered\": false,\n            \"deliveryDate\": null,\n            \"paymentMethod\": \"cod\",\n            \"isPaid\": false,\n            \"transactionId\": \"\",\n            \"orderStatus\": \"confirmed\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "get notifications Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetUnreadNotifications {\r\n    getUnreadNotifications(read: false) {\r\n        _id\r\n        userId\r\n        type\r\n        content\r\n        sentAt\r\n        read\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get notifications Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query GetUnreadNotifications {\r\n    getUnreadNotifications(read: false) {\r\n        _id\r\n        userId\r\n        type\r\n        content\r\n        sentAt\r\n        read\r\n    }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "266"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10a-GMvkwIQhXe4oztUq/1FxX8JK0QY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Mar 2025 13:20:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getUnreadNotifications\": [\n            {\n                \"_id\": \"67dac2d20599bc6a6f8d3f4d\",\n                \"userId\": \"67daaeb3530770be4e94528c\",\n                \"type\": \"order_update\",\n                \"content\": \"we deleted your order with these product changes:\\n1 x HP Omen 16 removed\",\n                \"sentAt\": \"2025-03-19T13:12:50.192Z\",\n                \"read\": false\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
